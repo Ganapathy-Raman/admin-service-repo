@@ -1,19 +1,20 @@
 package com.rts.tap.constants;
 
 public class APIConstants {
-	public static final String BASE_URL = "/admin-service/tap";
-//	public static final String FRONT_END_URL = "http://192.168.8.90:3003";
-	public static final String FRONT_END_URL = "http://localhost:3000";
 
+	private APIConstants() {
+		throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
+	}
+
+	public static final String BASE_URL = "/admin-service/tap";
+	public static final String FRONT_END_URL = "http://localhost:3000";
 
 	// TEAM - A
 	public static final String ADD_ADMIN_URL = "/createadmin";
 	public static final String GET_ALL_ADMINS_URL = "/admins";
 	public static final String GET_ADMIN_BY_ID_URL = "/admin/{id}";
-	
-//	public static final String CROSS_ORIGIN_URL = "http://192.168.8.90:3003";
-	public static final String CROSS_ORIGIN_URL = "http://localhost:3000";
 
+	public static final String CROSS_ORIGIN_URL = "http://localhost:3000";
 
 	// ORGANIZATION
 	public static final String ADD_ORGANIZATION_URL = "/createorganization";
@@ -38,7 +39,6 @@ public class APIConstants {
 	public static final String GETALL_ROLE_URL = "/getallrole";
 	public static final String UPDATE_ROLE_URL = "/updaterole/{id}";
 	public static final String GET_ROLE_BY_ID_URL = "/getrolebyid/{id}";
-	
 
 	// LOCATION
 	public static final String ADD_ORG_LOCATION_URL = "/organizationlocation";
