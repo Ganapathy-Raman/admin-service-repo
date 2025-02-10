@@ -40,7 +40,7 @@ pipeline {
 
                 script {
 
-                    docker.build('tapz_admin-service_img', '-f Dockerfile .')
+                    docker.build('tapz_admin_img', '-f Dockerfile .')
 
                 }
 
@@ -52,7 +52,7 @@ pipeline {
 
             steps {
 
-                bat 'docker run -d -p 5373:5373 --name admin_service tapz_admin-service_img'
+                bat 'docker run -d -p 5373:5373 --name admin_service tapz_admin_img'
 
             }
 
@@ -62,7 +62,7 @@ stage('Cleanup') {
             steps {
                 bat 'docker stop admin_service'
                 bat 'docker rm admin_service'
-                bat 'docker rmi tapz_admin-service_img'
+                bat 'docker rmi tapz_admin_img'
             }
         }
 
