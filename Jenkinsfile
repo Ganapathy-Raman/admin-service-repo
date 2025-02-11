@@ -33,6 +33,14 @@ pipeline {
             }
 
         }
+
+        stage('Cleanup') {
+            steps {
+                bat 'docker stop admin_service'
+                bat 'docker rm admin_service'
+                bat 'docker rmi tapz_admin_img'
+            }
+        }
  
         stage('Docker Build') {
 
@@ -58,13 +66,7 @@ pipeline {
 
         }
 
-stage('Cleanup') {
-            steps {
-                bat 'docker stop admin_service'
-                bat 'docker rm admin_service'
-                bat 'docker rmi tapz_admin_img'
-            }
-        }
+
 
     }
 
